@@ -44,6 +44,10 @@
 ;show column on the bottom bar
 (column-number-mode)
 
+; lines number
+(global-display-line-numbers-mode 1)
+
+(global-display-line-numbers-mode 1)
 
 (load-theme 'tango-dark)
 (set-face-background 'default "#111")
