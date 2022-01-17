@@ -33,6 +33,7 @@
 			                      magit
                                   yasnippet-snippets
 			                      janet-mode
+                                  gradle-mode
 ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
@@ -87,12 +88,14 @@
 (add-hook 'ielm-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'janet-mode-hook 'enable-paredit-mode)
 
 ;; Enable Rainbow Delimiters.
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'ielm-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'lisp-interaction-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'janet-mode-hook 'rainbow-delimiters-mode)
 
 ;; Customize Rainbow Delimiters.
 (require 'rainbow-delimiters)
