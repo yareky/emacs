@@ -12,26 +12,28 @@
 (package-initialize)
 
 (setq package-selected-packages '(
-                  lsp-mode
-				  yasnippet
-				  lsp-treemacs
-				  helm-lsp
-			      projectile
-				  hydra
-				  flycheck
-				  company
-				  avy
-				  which-key
-				  helm-xref
-				  dap-mode
-				  neotree
-				  all-the-icons
-				  markdown-mode
-				  paredit
-
-				  rainbow-delimiters
-                  magit
-				  ))
+                                  lsp-mode
+                                  lsp-ui
+			                      yasnippet
+			                      lsp-treemacs
+			                      helm-lsp
+			                      projectile
+			                      hydra
+			                      flycheck
+			                      company
+			                      avy
+			                      which-key
+			                      helm-xref
+			                      dap-mode
+			                      neotree
+			                      all-the-icons
+			                      markdown-mode
+			                      paredit
+			                      rainbow-delimiters
+			                      magit
+                                  yasnippet-snippets
+			                      janet-mode
+))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
@@ -44,10 +46,11 @@
 ;show column on the bottom bar
 (column-number-mode)
 
-; lines number
-(global-display-line-numbers-mode 1)
+;show line number
+(global-display-line-numbers-mode)
 
-(global-display-line-numbers-mode 1)
+;enable yasnippet
+(yas-global-mode 1)
 
 (load-theme 'tango-dark)
 (set-face-background 'default "#111")
