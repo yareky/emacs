@@ -3,6 +3,7 @@
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
 
 
+
 ;; Write customizations to a separate file instead of this file.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file t)
@@ -14,26 +15,31 @@
 (setq package-selected-packages '(
                                   lsp-mode
                                   lsp-ui
-			                      yasnippet
-			                      lsp-treemacs
-			                      helm-lsp
-			                      projectile
-			                      hydra
-			                      flycheck
-			                      company
-			                      avy
-			                      which-key
-			                      helm-xref
-			                      dap-mode
-			                      neotree
-			                      all-the-icons
-			                      markdown-mode
-			                      paredit
-			                      rainbow-delimiters
-			                      magit
+                                  yasnippet
+                                  treemacs
+                                  lsp-treemacs
+                                  helm-lsp
+                                  projectile
+                                  hydra
+                                  flycheck
+                                  company
+                                  avy
+                                  which-key
+                                  helm-xref
+                                  dap-mode
+                                  neotree
+                                  all-the-icons
+                                  markdown-mode
+                                  paredit
+                                  rainbow-delimiters
+                                  magit
                                   yasnippet-snippets
-			                      janet-mode
+                                  janet-mode
                                   gradle-mode
+                                  flycheck-kotlin
+                                  kotlin-mode
+                                  use-package
+                                  gulp-task-runner
 ))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
@@ -126,6 +132,11 @@
       company-idle-delay 0.0
       company-minimum-prefix-length 1
       lsp-idle-delay 0.1)  ;; clangd is fast
+
+;(setq lsp-keymap-prefix "S-x")
+;(define-key map (kbd lsp-keymap-prefix) lsp-command-map)
+;(define-key lsp-mode-map (kbd "s-x") lsp-command-map)
+(setq lsp-keymap-prefix "C-c l")
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
